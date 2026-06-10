@@ -1,17 +1,22 @@
 ---
-name: changelog
-title: 📜 Amy Skill Agent｜Changelog（沿革日誌）
-type: changelog
+file: changelog.md
+version: Agent v1.0 + v2.13
+updated: '2026-06-09'
 status: active
+provides:
+- 版本演進沿革
+- 規則生死簿
+- 案件學習索引
+- 數據來源檔案庫
 sections:
-- 🚨 SECTION 0:使用本檔的鐵則
-- 🗓️ SECTION A:完整版本演進時間線
-- 📋 SECTION B:規則生死簿
-- 🏷️ SECTION C:案件學習索引
-- 📊 SECTION D:數據來源檔案庫
-- 🗂️ SECTION E:配套檔案演進關係圖
-- 🛠️ SECTION F:Changelog 維護 SOP
-- 🗄️ SECTION G:歸檔索引
+- SECTION 0
+- SECTION A
+- SECTION B
+- SECTION C
+- SECTION D
+- SECTION E
+- SECTION F
+- SECTION G
 ---
 
 # 📜 Amy Skill Agent｜Changelog（沿革日誌）

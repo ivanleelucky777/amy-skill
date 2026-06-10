@@ -1,17 +1,17 @@
 ---
-name: active_constraints
-title: ⚠️ Amy Skill Agent｜State / Active Constraints(當前限制)
-type: state
+file: active_constraints.md
+version: '1.0'
+updated: '2026-05-29'
 status: active
+provides:
+- 當前接案限制
+- 廠商例外指令
+- 業配暫停機制
 sections:
-- 🚦 使用本檔的鐵則
-- 🟢 PART A:Ivan 明確指令例外(廠商特殊要求紀錄)
-- 🔴 PART B:健康度觸發的暫停期間
-- 🟡 PART C:其他臨時限制
-- 📋 接案前必查清單
-- 🗂️ 歷史紀錄(已解除的限制)
-- 🔄 本檔維護 SOP
-- 🚨 本檔的「最後一道防線」性質
+- PART A
+- PART B
+- PART C
+- 接案前必查清單
 ---
 
 # ⚠️ Amy Skill Agent｜State / Active Constraints(當前限制)

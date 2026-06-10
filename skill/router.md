@@ -1,18 +1,26 @@
 ---
-name: router
-title: 🎛️ Amy Skill Agent｜Router（進入點）
-type: router
+file: router.md
+version: Agent v1.0
+updated: '2026-05-29'
 status: active
+provides:
+- 入口點
+- 啟動SOP
+- 接案SOP
+- Skill維護SOP
+- 規則索引
+- 衝突清單
+- 決策節點
 sections:
-- 🚦 SECTION A：Claude 啟動 SOP（每次新對話必跑）
-- 📚 SECTION B：接案產製 SOP
-- 🛠️ SECTION C：Skill 維護 SOP
-- 📊 SECTION D：狀態監測 SOP
-- 📁 SECTION E：規則索引表（哪個主題去查哪份檔）
-- ⚠️ SECTION F：衝突清單（已推翻的舊規則）
-- 🗄️ SECTION G：歸檔清單（不再現役）
-- 👤 SECTION H：決策節點對照表（誰決定什麼）
-- 🆕 SECTION I：本檔更新規則
+- SECTION A
+- SECTION B
+- SECTION C
+- SECTION D
+- SECTION E
+- SECTION F
+- SECTION G
+- SECTION H
+- SECTION I
 ---
 
 # 🎛️ Amy Skill Agent｜Router（進入點）
@@ -174,15 +182,20 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 
 ### 🟢 現役檔案清單
 
-| 檔名 | 性質 | 內容範圍 |
-|---|---|---|
-| `router.md` | 進入點 | 本檔，SOP 與索引 |
-| `principles.md` | 原則層 | 不腦補、體驗真實性、低密度第一人稱、女性視角、男性腔/評論員腔禁 |
-| `workflows.md` | 工作流 | 六區交付包、發稿（含 WP）、清點表、交付物模板 |
-| `dictionary.md` | 字典 | 感官詞光譜、AI 符號禁用、廣告法風險詞、替換對照 |
-| `voice.md` | 語氣庫 | Amy 真實會講的話、樣本句、口頭禪（**素材待補**）|
-| `data.md` | 數據庫 | IG 演算法、長度分軌、產業基準、市場情報 |
-| `changelog.md` | 沿革 | 版本演進、推翻紀錄、錯誤反思 |
+<!-- AUTO-FILELIST START -->
+| 檔名 | 版本 | 更新日期 | 狀態 |
+|---|---|---|---|
+| `router.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
+| `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
+| `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
+| `changelog.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `data.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `dictionary.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
+| `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
+| `principles.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
+| `workflows.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+<!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾
 
@@ -195,18 +208,72 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 
 ### 主題 → 對應檔案 查找表
 
-| 我想知道... | 查哪份 |
+<!-- AUTO-INDEX START -->
+| 主題 | 查哪份檔 |
 |---|---|
-| 這個詞能不能用 | dictionary.md |
-| Reels 開頭怎麼設計 | principles.md（鉤子三選一）+ data.md（五大禁忌） |
-| 影片要剪多長 | data.md（長度分軌） |
-| 文案像不像 Amy | voice.md |
-| 廠商有特殊要求要不要照做 | router.md SECTION B 核心原則 + cases/<案件>.md |
-| 今天能不能接這個案 | state/active_constraints.md |
-| 之前為什麼決定 X | changelog.md |
-| 六區交付包要包含什麼 | workflows.md |
-| 全平台清點怎麼跑 | workflows.md |
-| 廠商指定活動沒體驗過 | principles.md（體驗真實性分流） |
+| 入口點 | `router.md` |
+| 啟動SOP | `router.md` |
+| 接案SOP | `router.md` |
+| Skill維護SOP | `router.md` |
+| 規則索引 | `router.md` |
+| 衝突清單 | `router.md` |
+| 決策節點 | `router.md` |
+| 帳號健康度 | `account_health.md` |
+| 略過率監測 | `account_health.md` |
+| IG健康度 | `account_health.md` |
+| 週快照 | `account_health.md` |
+| 當前接案限制 | `active_constraints.md` |
+| 廠商例外指令 | `active_constraints.md` |
+| 業配暫停機制 | `active_constraints.md` |
+| 歸檔說明 | `archive_README.md` |
+| 歷史版本索引 | `archive_README.md` |
+| 版本演進沿革 | `changelog.md` |
+| 規則生死簿 | `changelog.md` |
+| 案件學習索引 | `changelog.md` |
+| 數據來源檔案庫 | `changelog.md` |
+| IG演算法數據 | `data.md` |
+| Reels長度分軌 | `data.md` |
+| 帳號健康度指標 | `data.md` |
+| 產業基準數據 | `data.md` |
+| Carousels設計 | `data.md` |
+| FB演算法 | `data.md` |
+| Threads演算法 | `data.md` |
+| WordPress SEO | `data.md` |
+| 詞彙黑名單 | `dictionary.md` |
+| 感官詞光譜 | `dictionary.md` |
+| AI寫作符號禁用 | `dictionary.md` |
+| 男性腔禁用 | `dictionary.md` |
+| 評論員腔禁用 | `dictionary.md` |
+| 廣告法風險詞 | `dictionary.md` |
+| 替換對照表 | `dictionary.md` |
+| 案件成效歸因 | `performance_log.md` |
+| Hook效果追蹤 | `performance_log.md` |
+| 學習筆記 | `performance_log.md` |
+| 寫作原則 | `principles.md` |
+| 三大鐵則 | `principles.md` |
+| 體驗真實性分流 | `principles.md` |
+| 不腦補 | `principles.md` |
+| 演算法優先 | `principles.md` |
+| 第一人稱低密度 | `principles.md` |
+| 女性視角校正 | `principles.md` |
+| 口播工程 | `principles.md` |
+| 標題人話檢測 | `principles.md` |
+| 鉤子白話鐵則 | `principles.md` |
+| Amy語氣庫 | `voice.md` |
+| Amy個人定位 | `voice.md` |
+| Amy禁用詞 | `voice.md` |
+| 語氣樣本庫 | `voice.md` |
+| 受眾畫像 | `voice.md` |
+| 六區交付包 | `workflows.md` |
+| 接案工作流 | `workflows.md` |
+| Reels分鏡製作 | `workflows.md` |
+| IG標題提案SOP | `workflows.md` |
+| 全平台清點 | `workflows.md` |
+| 發稿工作流 | `workflows.md` |
+| CTA三層 | `workflows.md` |
+| 法規處理SOP | `workflows.md` |
+| WordPress部落格 | `workflows.md` |
+<!-- AUTO-INDEX END -->
 
 ---
 

@@ -1,14 +1,12 @@
 ---
-name: archive_README
-title: 🗄️ Archive(歸檔資料夾)
-type: archive
+file: archive_README.md
+version: '1.0'
+updated: '2026-05-29'
 status: archived
-sections:
-- 🚨 給 Claude 的鐵則
-- 📁 資料夾內容
-- 🔄 為什麼歸檔不刪除?
-- 🔍 如何從歸檔追蹤一條規則?
-- ⚠️ Claude 不引用歸檔的例外
+provides:
+- 歸檔說明
+- 歷史版本索引
+sections: []
 ---
 
 # 🗄️ Archive(歸檔資料夾)

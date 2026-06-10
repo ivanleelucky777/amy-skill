@@ -1,0 +1,17 @@
+#!/bin/bash
+# pre-commit: regenerate router indexes and validate all skill files
+set -e
+
+echo "[pre-commit] Regenerating router.md AUTO indexes..."
+python3 scripts/gen_router.py
+
+echo "[pre-commit] Running skill file validation..."
+python3 scripts/check.py
+
+# Stage router.md if gen_router updated it
+if ! git diff --quiet skill/router.md 2>/dev/null; then
+    echo "[pre-commit] Staging updated skill/router.md"
+    git add skill/router.md
+fi
+
+echo "[pre-commit] All checks passed."

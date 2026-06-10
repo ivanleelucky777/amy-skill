@@ -1,0 +1,54 @@
+# retired.yml — blacklist of deprecated rules / terms
+# check.py will flag any of these appearing in active skill files.
+# Fields: term (required), since, reason, replaced_by
+
+retired:
+  - term: "30-50 秒禁止區"
+    since: "2026-05-29"
+    reason: "無業界數據支持，實際 30-45 秒是業配甜蜜區"
+    replaced_by: "業配 30-45s / 自費 15-25s（data.md PART F）"
+
+  - term: "A/B/C/D 案件分級"
+    since: "2026-05-29"
+    reason: "Ivan 不採用分級邏輯，廠商案全接"
+    replaced_by: "演算法優先 + Ivan 明確指令例外"
+
+  - term: "禁接 D 級"
+    since: "2026-05-29"
+    reason: "A/B/C/D 分級制廢除後此規則無效"
+    replaced_by: "無，改為廠商特殊要求個案紀錄"
+
+  - term: "五區交付包"
+    since: "2026-05-29"
+    reason: "漏掉演算法版 Caption 甜蜜點字數"
+    replaced_by: "六區交付包（第 5 區：IG 演算法版 400-450 字）"
+
+  - term: "全篇嚴禁第一人稱"
+    since: "2026-05-15"
+    reason: "失去 Amy 個人視角，過於僵化"
+    replaced_by: "第一人稱低密度（≤4-6 次，禁流水帳開頭）"
+
+  - term: "美食探店預設不做輪播"
+    since: "2026-05-16"
+    reason: "探店類 Carousels 有效（Saves 信號強），v2.7 修正"
+    replaced_by: "探店可做 Carousels（dish-by-dish + verdict slide）"
+
+  - term: "A 版業配 15-28 秒"
+    since: "2026-05-29"
+    reason: "對親子餐廳業配太短"
+    replaced_by: "業配 30-45 秒分軌"
+
+  - term: "標題強制只能放地點"
+    since: "2026-05-29"
+    reason: "過於僵化"
+    replaced_by: "雙版本工作流（SEO 重 vs 情緒重）"
+
+  - term: "帳號信任分接案分級"
+    since: "2026-05-29"
+    reason: "分級制整體廢除"
+    replaced_by: "演算法優先 + Ivan 指令例外"
+
+  - term: "Hook ≤10 字"
+    since: "2026-06-09"
+    reason: "芒果案 12 字實證落在 3 秒窗口，10 字過保守"
+    replaced_by: "影片版 Hook ≤13 字 / 3 秒念得完（principles.md 原則 L）"
