@@ -1,3 +1,18 @@
+---
+name: account_health
+title: 📈 Amy Skill Agent｜State / Account Health(帳號健康度)
+type: state
+status: active
+sections:
+- 🚦 使用本檔的鐵則
+- 📊 本週快照(最新)
+- 🎯 當前觸發的行動
+- 📅 每週監測 SOP
+- 🗂️ 歷史紀錄
+- 📊 趨勢分析(累積 4+ 週後可做)
+- 🔄 本檔維護 SOP
+---
+
 # 📈 Amy Skill Agent｜State / Account Health(帳號健康度)
 
 > **本檔性質**:動態狀態檔,記錄 Amy 各平台帳號的健康度數據

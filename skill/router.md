@@ -1,3 +1,20 @@
+---
+name: router
+title: 🎛️ Amy Skill Agent｜Router（進入點）
+type: router
+status: active
+sections:
+- 🚦 SECTION A：Claude 啟動 SOP（每次新對話必跑）
+- 📚 SECTION B：接案產製 SOP
+- 🛠️ SECTION C：Skill 維護 SOP
+- 📊 SECTION D：狀態監測 SOP
+- 📁 SECTION E：規則索引表（哪個主題去查哪份檔）
+- ⚠️ SECTION F：衝突清單（已推翻的舊規則）
+- 🗄️ SECTION G：歸檔清單（不再現役）
+- 👤 SECTION H：決策節點對照表（誰決定什麼）
+- 🆕 SECTION I：本檔更新規則
+---
+
 # 🎛️ Amy Skill Agent｜Router（進入點）
 
 > **本檔性質**：所有 Claude 對話啟動時**第一個**讀取的檔案

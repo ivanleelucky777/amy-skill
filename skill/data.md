@@ -1,3 +1,53 @@
+---
+name: data
+title: 📊 Amy Skill Agent｜Data(數據庫)
+type: data
+status: active
+sections:
+- 🚦 SECTION 0:使用本檔的鐵則
+- A-1:2026 內容生態三大趨勢
+- A-2:跨平台核心信號權重(Mosseri 確認 + 2026 數據驗證)
+- A-3:Your Algorithm 革命(2026 初全球推出)
+- B-1:四大排名信號(2026 完整版)
+- B-2:四大格式戰力比較(Socialinsider 2026 Q1)
+- B-3:Reels 三秒法則
+- B-4:Carousels 設計參數(v2.7 數據驗證)
+- B-5:Caption 第一行 Hook 三型(Captain Hook AI 2026)
+- B-6:IG Caption 字數甜蜜點
+- B-7:Hashtag 數據
+- B-8:DM 分享觸發句設計
+- B-9:立即可做檢查清單(v2.9 累積 10 件事)
+- C-1:現況
+- C-2:已知重點
+- C-3:待補項目
+- D-1:核心特性
+- D-2:結尾 CTA 設計
+- D-3:待補項目
+- E-1:E-E-A-T 四維度(Google 2026)
+- E-2:SEO 欄位完整規格
+- E-3:長尾關鍵字研究骨架
+- E-4:內部連結策略骨架
+- E-5:WordPress 部落格結構模板
+- F-1:Amy IG Reels 長度標準
+- F-2:跨平台長度差異
+- F-3:被推翻的長度規則
+- F-4:片長依字數動態決定(Doze GI 案學習)
+- G-1:互動率產業平均(Socialinsider 2026 Q1)
+- G-2:Location Tag 紅利
+- G-3:最佳發文時段(美食/餐飲)
+- G-4:美食探店 Carousels 格式
+- H-1:Skip Rate 健康基準表
+- H-2:Amy 帳號當前狀態(2026-05-29)
+- H-3:監測 SOP(必跑)
+- H-4:修復策略(危險區以上)
+- I-1:Meta / IG 官方來源
+- I-2:第三方產業報告
+- I-3:Amy 帳號實際數據(內部累積)
+- I-4:案件實戰累積
+- I-5:「謹慎使用」的來源
+- 🔄 SECTION X:本檔維護 SOP
+---
+
 # 📊 Amy Skill Agent｜Data(數據庫)
 
 > **本檔性質**:數據參考庫 — 「這條規則背後的數據依據是什麼」、「新案件來時該參考哪些數字」

@@ -1,3 +1,19 @@
+---
+name: active_constraints
+title: ⚠️ Amy Skill Agent｜State / Active Constraints(當前限制)
+type: state
+status: active
+sections:
+- 🚦 使用本檔的鐵則
+- 🟢 PART A:Ivan 明確指令例外(廠商特殊要求紀錄)
+- 🔴 PART B:健康度觸發的暫停期間
+- 🟡 PART C:其他臨時限制
+- 📋 接案前必查清單
+- 🗂️ 歷史紀錄(已解除的限制)
+- 🔄 本檔維護 SOP
+- 🚨 本檔的「最後一道防線」性質
+---
+
 # ⚠️ Amy Skill Agent｜State / Active Constraints(當前限制)
 
 > **本檔性質**:動態狀態檔,記錄**當下生效**的特殊限制條件

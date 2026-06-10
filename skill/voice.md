@@ -1,3 +1,21 @@
+---
+name: voice
+title: 🎙️ Amy Skill Agent｜Voice（Amy 語氣庫）
+type: voice
+status: skeleton
+sections:
+- 🚦 SECTION 0：使用本檔的鐵則
+- 👤 SECTION A：Amy 個人定位（核心五點）
+- 🚫 SECTION B：Amy 不會講的話（個人禁用層）
+- 💬 SECTION C：Amy 真的會講的話（語氣樣本庫）
+- 🏗️ SECTION D：Amy 招牌結構（待累積）
+- 👥 SECTION E：Amy 受眾畫像（深度版）
+- 🔄 SECTION F：採集流程（兩種機制並行）
+- 🧪 SECTION G：「假設示例」與「真實樣本」的標註規範
+- 🛠️ SECTION X：本檔維護 SOP
+- 📚 SECTION Y：來源說明
+---
+
 # 🎙️ Amy Skill Agent｜Voice（Amy 語氣庫）
 
 > **本檔性質**：Amy 的「個人風格層」——寫得「像 Amy」而不只是「符合規則」

@@ -1,3 +1,16 @@
+---
+name: archive_README
+title: 🗄️ Archive(歸檔資料夾)
+type: archive
+status: archived
+sections:
+- 🚨 給 Claude 的鐵則
+- 📁 資料夾內容
+- 🔄 為什麼歸檔不刪除?
+- 🔍 如何從歸檔追蹤一條規則?
+- ⚠️ Claude 不引用歸檔的例外
+---
+
 # 🗄️ Archive(歸檔資料夾)
 
 > **本資料夾性質**:Amy Skill 歷史版本,**不再現役**

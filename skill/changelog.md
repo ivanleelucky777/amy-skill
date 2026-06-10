@@ -1,3 +1,19 @@
+---
+name: changelog
+title: 📜 Amy Skill Agent｜Changelog（沿革日誌）
+type: changelog
+status: active
+sections:
+- 🚨 SECTION 0:使用本檔的鐵則
+- 🗓️ SECTION A:完整版本演進時間線
+- 📋 SECTION B:規則生死簿
+- 🏷️ SECTION C:案件學習索引
+- 📊 SECTION D:數據來源檔案庫
+- 🗂️ SECTION E:配套檔案演進關係圖
+- 🛠️ SECTION F:Changelog 維護 SOP
+- 🗄️ SECTION G:歸檔索引
+---
+
 # 📜 Amy Skill Agent｜Changelog（沿革日誌）
 
 > **本檔性質**：規則演進的歷史紀錄,給 Claude 回答「為什麼這條規則存在 / 為什麼那條被推翻」

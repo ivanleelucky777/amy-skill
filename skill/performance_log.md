@@ -1,3 +1,16 @@
+---
+name: performance_log
+title: 📊 Amy Skill Agent｜State / Performance Log(成效歸因日誌)
+type: state
+status: active
+sections:
+- 🚦 使用本檔的鐵則
+- 📋 紀錄模板(每案一筆)
+- 📚 已紀錄案件
+- 🔍 累積分析(累積 5+ 案件後可做)
+- 🔄 本檔維護 SOP
+---
+
 # 📊 Amy Skill Agent｜State / Performance Log(成效歸因日誌)
 
 > **本檔性質**:動態狀態檔,記錄每個案件發布後的實際成效

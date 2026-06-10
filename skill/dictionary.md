@@ -1,3 +1,24 @@
+---
+name: dictionary
+title: 📗 Amy Skill Agent｜Dictionary（字典）
+type: dictionary
+status: active
+sections:
+- 🚦 SECTION 0：使用本檔的鐵則
+- 表 1｜感官詞光譜（食物味道/口感/視覺/感受形容詞）
+- 表 2｜AI 寫作符號禁用表
+- '表 3｜男性腔黑名單（v2.11 規則 #5）'
+- '表 4｜評論員腔黑名單（v2.11 規則 #6）'
+- 表 5｜編輯腔/行銷腔黑名單（v2.6 / v2.7 累積）
+- 表 6｜業配感詞清除清單（v2.7 邑居酒屋學習）
+- 表 7｜廣告法風險詞（《公平交易法》/《食品安全衛生管理法》）
+- 表 8｜腦補高風險詞（v2.8 + Doze GI 學習）
+- 表 9｜AI 痕跡偵測 vs KOL 標配（v2.7 重要區分）
+- 表 10｜替換對照表（綜合速查）
+- 🔄 SECTION X：本檔維護 SOP
+- 📚 SECTION Y：來源說明
+---
+
 # 📗 Amy Skill Agent｜Dictionary（字典）
 
 > **本檔性質**：查表型內容，「這個詞能不能用」直接查表決定
