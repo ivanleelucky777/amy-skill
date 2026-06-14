@@ -161,6 +161,85 @@ def check3_blacklist(fname: str, body: str, retired_terms: list[str]) -> list[st
     return errs
 
 
+# ── Check 4: 區/版本數字一致性 (global) ─────────────────────────────────────
+
+# 五/六/七/八 + 區交付包 | 區...個版本 | 個版本
+COUNT_RE = re.compile(
+    r"([五六七八])(?:區[^\n。]{0,25}(?:交付包|個版本)|個版本)",
+    re.UNICODE,
+)
+
+
+COUNT_SUPPRESS = ("已退版", "已升級", "已推翻", "過渡", "歷史", "沿革")
+_HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)")
+
+
+def check4_count_global(all_files: dict) -> list[str]:
+    """所有 五/六/七/八 + 交付包/個版本 的數字必須一致。
+    同一行或任一層段落標題含 COUNT_SUPPRESS 詞彙時跳過。
+    """
+    hits: dict[str, list[str]] = {}
+    for fname, (meta, body, path) in all_files.items():
+        if not isinstance(body, str):
+            continue
+        headings: list[tuple[int, str]] = []   # [(level, title), ...]
+        for i, line in enumerate(body.splitlines(), 1):
+            hm = _HEADING_RE.match(line)
+            if hm:
+                level = len(hm.group(1))
+                headings = [(l, t) for l, t in headings if l < level]
+                headings.append((level, hm.group(2)))
+            context = [line] + [t for _, t in headings]
+            if any(s in ctx for s in COUNT_SUPPRESS for ctx in context):
+                continue
+            for m in COUNT_RE.finditer(line):
+                num = m.group(1)
+                hits.setdefault(num, []).append(f"{fname}:~{i}: {line.strip()[:70]}")
+
+    if len(hits) <= 1:
+        return []
+
+    errs = [f"  [COUNT] 區/版本數字不一致 — 出現: {sorted(hits.keys())}"]
+    for num in sorted(hits.keys()):
+        for loc in hits[num]:
+            errs.append(f"    {num}: {loc}")
+    return errs
+
+
+# ── Check 5: 交付字數 owner guard ────────────────────────────────────────────
+
+DELIVERY_OWNERS = {"workflows.md", "data.md"}  # workflows=交付規格, data=演算法研究數據
+DELIVERY_COUNTS_RE = re.compile(
+    r"800[-–]1000|400[-–]450|200[-–]300|~420\b|(?<!\d)1400(?!\d)",
+    re.UNICODE,
+)
+
+
+def check5_dedup(fname: str, body: str) -> list[str]:
+    """交付字數規格只能出現在 DELIVERY_OWNERS；其他檔必須同行帶 DLV- 標記。
+    同一行或任一層段落標題含 COUNT_SUPPRESS 詞彙時跳過（歷史語境豁免）。
+    """
+    if fname in DELIVERY_OWNERS:
+        return []
+    errs = []
+    headings: list[tuple[int, str]] = []
+    for i, line in enumerate(body.splitlines(), 1):
+        hm = _HEADING_RE.match(line)
+        if hm:
+            level = len(hm.group(1))
+            headings = [(l, t) for l, t in headings if l < level]
+            headings.append((level, hm.group(2)))
+        context = [line] + [t for _, t in headings]
+        if any(s in ctx for s in COUNT_SUPPRESS for ctx in context):
+            continue
+        if DELIVERY_COUNTS_RE.search(line) and "DLV-" not in line:
+            errs.append(
+                f"  [DEDUP] 交付字數出現於非 owner 檔，缺 DLV- 標記"
+                f" line ~{i}: {line.strip()[:70]}"
+            )
+    return errs
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -180,6 +259,7 @@ def main():
         file_errs += check1_frontmatter(fname, meta, body)
         file_errs += check2_xrefs(fname, body, all_files)
         file_errs += check3_blacklist(fname, body, retired_terms)
+        file_errs += check5_dedup(fname, body)
 
         if file_errs:
             all_ok = False
@@ -188,6 +268,16 @@ def main():
                 print(e)
         else:
             print(f"OK    {fname}")
+
+    # Global check
+    count_errs = check4_count_global(all_files)
+    if count_errs:
+        all_ok = False
+        print(f"\nFAIL  [global] COUNT")
+        for e in count_errs:
+            print(e)
+    else:
+        print(f"\nOK    [global] COUNT — 數字一致")
 
     print()
     if all_ok:
