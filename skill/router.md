@@ -354,6 +354,17 @@ archive/
 
 ---
 
+## 治理守則(2026-06-14 重構鎖定)
+
+1. 一事實一 owner:交付規格 owner=workflows.md PART II(DLV-1~6);長度/數據 owner=data.md。其他檔引用一律用 DLV-/PRIN- 等 ID 指標,不複製數值。
+2. 改規則前先判類別:CLASS-S 結構(區數/身份/字數)、CLASS-R 規則、CLASS-T 狀態。
+3. 每次 commit 前 pre-commit hook 自動跑 check.py(含 COUNT 區數一致 + DEDUP 字數不重複),紅燈擋 commit。
+4. 歷史/退版文字用 suppress 標記(已退版/已升級/沿革語境),不竄改史實。
+5. 舊案不回改編號,靠對照表翻譯(五區→六區、第5區→DLV-6、1-D→DLV-5)。
+6. STATE 檔(account_health/performance_log/active_constraints)不進 skill 打包。
+
+---
+
 **Router 結束**
 
 > 下一步：讀對應路徑的檔案（principles / workflows / dictionary / data / state）
