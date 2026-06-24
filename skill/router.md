@@ -1,7 +1,7 @@
 ---
 file: router.md
 version: Agent v1.0
-updated: '2026-05-29'
+updated: '2026-06-23'
 status: active
 provides:
 - 入口點
@@ -156,6 +156,16 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 
 ---
 
+### 📦 交付包裝（六區寫完後固定一步）
+
+六區產製 + 清點 + 發稿前檢查通過後，**自動套交付包裝層輸出「可複製 HTML 頁」**（DLV-PKG-H5，全案件預設）。
+
+- 規格與骨架路徑：`workflows.md` PART II「B-PKG」+ PART I「A-7」
+- 骨架正本：`amy-skill/assets/dlv_pkg_h5_template.html`
+- 定位：包裝層，不佔 DLV-1~6 編號；STATE 不進骨架
+
+---
+
 ## 🛠️ SECTION C：Skill 維護 SOP
 
 當 Ivan 提到「Skill 升級 / Agent 重構 / 加規則」時：
@@ -185,16 +195,16 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 <!-- AUTO-FILELIST START -->
 | 檔名 | 版本 | 更新日期 | 狀態 |
 |---|---|---|---|
-| `router.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
+| `router.md` | Agent v1.0 | 2026-06-23 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `changelog.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `changelog.md` | Agent v1.0 + v2.14 | 2026-06-23 | 🟢 active |
 | `data.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
 | `dictionary.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
 | `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `principles.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
 | `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
-| `workflows.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `workflows.md` | Agent v1.0 + v2.14 | 2026-06-23 | 🟢 active |
 <!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾
@@ -205,6 +215,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | `state/performance_log.md` | 成效歸因日誌 |
 | `state/active_constraints.md` | 當前限制（廠商特殊要求紀錄、Ivan 例外指令、其他短期限制） |
 | `cases/<案件代號>.md` | 案件專屬規則（從新案開始累積） |
+| `assets/dlv_pkg_h5_template.html` | 交付包裝層骨架正本（DLV-PKG-H5；放 repo 根目錄 `assets/`，check.py 只掃 `skill/` 故不碰它） |
 
 ### 主題 → 對應檔案 查找表
 
@@ -265,6 +276,9 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | 語氣樣本庫 | `voice.md` |
 | 受眾畫像 | `voice.md` |
 | 六區交付包 | `workflows.md` |
+| 交付包裝層 | `workflows.md` |
+| 可複製HTML交付頁 | `workflows.md` |
+| DLV-PKG-H5 | `workflows.md` |
 | 接案工作流 | `workflows.md` |
 | Reels分鏡製作 | `workflows.md` |
 | IG標題提案SOP | `workflows.md` |
