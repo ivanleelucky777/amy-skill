@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  DLV-PKG-H5｜交付包裝層工版（超集骨架，正本）
+  owner 規格：amy-skill/workflows.md  PART II「B-PKG」+ PART I「A-7」
+  對齊來源：好食多 / 國產鮮乳 / 金鮮滿屋 / 桂冠 四篇實際版
+  ------------------------------------------------------------
+  【設計原則】
+   1. 外殼固定：legend + .zone卡 + .tag膠囊 + 右下複製鍵 + 折疊 + 頁尾未結項
+   2. 區塊是「插槽」：標 [選用] 的整塊可在填稿時刪除
+      → 若刪掉的塊含廠商指定品項，務必在頁尾未結項補一筆
+   3. 主題色 per-case：只改 :root 的 --accent / --accent2 一兩行
+   4. 排序＝發稿優先序（HOOK→主觸及→影片→部落格→店家資訊），非 DLV 編號序
+  【填稿步驟 A-7】把各 .zone-text 內的提示替換成本案內容；ID-pointer 見每塊註解
+  【鐵則】區的字數/結構規則只在 workflows B-1~B-6，本檔不複寫；STATE 絕不烘進來
+  ============================================================
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{STORE}}｜{{AREA}}｜交付包</title>
+<style>
+  /* ↓↓↓ per-case 只改這兩行主題色 ↓↓↓ */
+  :root{ --accent:#1d6f8b; --accent2:#9b6a2f; }
+  /* ↑↑↑ 其餘變數固定，跨案不動 ↑↑↑ */
+  :root{
+    --bg:#eef2f3; --card:#fff; --ink:#1f2a2e; --sub:#7b8a8f;
+    --line:#dde6e8; --accentink:#fff; --radius:14px;
+    --opt:#a98a55; --warn:#9a6a2f;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body{ margin:0; background:var(--bg); color:var(--ink);
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+        line-height:1.75; padding:20px 14px 60px; }
+  .wrap{ max-width:760px; margin:0 auto; }
+
+  header.top{ text-align:center; margin-bottom:6px; }
+  header.top h1{ font-size:1.18rem; margin:0 0 4px; letter-spacing:.5px; }
+  header.top p{ margin:0; color:var(--sub); font-size:.82rem; }
+  .meta{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:8px 0 14px; }
+  .meta span{ background:#f1f8fb; border:1px solid var(--line); border-radius:999px;
+              padding:2px 10px; font-size:.72rem; color:var(--sub); }
+
+  /* 圖例說明 */
+  .legend{ background:#f7fafb; border:1px solid var(--line); border-radius:12px;
+           padding:11px 14px; margin:0 0 20px; font-size:.78rem; color:#4a5a60; }
+  .legend b{ color:var(--accent); }
+  .legend .opt-pill{ background:var(--opt); color:#fff; border-radius:5px;
+                     padding:1px 6px; font-size:.68rem; font-weight:700; }
+
+  /* 區塊卡 */
+  .zone{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+         margin:0 0 16px; overflow:hidden; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  .zhead{ display:flex; align-items:center; gap:8px; padding:12px 14px;
+          border-bottom:1px solid var(--line); background:#f7fafb; }
+  .tag{ font-size:.7rem; font-weight:700; color:var(--accentink); background:var(--accent);
+        border-radius:6px; padding:2px 8px; white-space:nowrap; }
+  .ztitle{ font-size:.92rem; font-weight:700; }
+  .opt-badge{ margin-left:auto; font-size:.66rem; font-weight:700; color:#fff;
+              background:var(--opt); border-radius:5px; padding:2px 7px; }
+  .zbody{ padding:14px; }
+  pre.zone-text{ margin:0; white-space:pre-wrap; word-break:break-word;
+                 font-family:inherit; font-size:.9rem; line-height:1.8; }
+  pre.zone-text .hint{ color:var(--sub); font-style:italic; }
+  .zfoot{ display:flex; justify-content:flex-end; padding:10px 14px; border-top:1px solid var(--line); }
+  .copy{ border:1px solid var(--accent); background:var(--accent); color:var(--accentink);
+         border-radius:999px; padding:7px 18px; font-size:.82rem; cursor:pointer; font-family:inherit; }
+  .copy:active{ opacity:.8; }
+  .copy.ok{ background:#1f8a5b; border-color:#1f8a5b; }
+  .copy.err{ background:#b23b3b; border-color:#b23b3b; }
+
+  /* 折疊（Reels 分鏡 / 部落格 SEO） */
+  details{ border-top:1px solid var(--line); }
+  details > summary{ cursor:pointer; list-style:none; padding:12px 14px;
+                     font-size:.85rem; color:var(--accent); font-weight:600; }
+  details > summary::-webkit-details-marker{ display:none; }
+  details > summary::before{ content:"▸ "; }
+  details[open] > summary::before{ content:"▾ "; }
+
+  /* 頁尾未結項 */
+  footer.unresolved{ background:#fff8f1; border:1px solid #f0dcc4; border-radius:var(--radius);
+                     padding:14px 16px; margin-top:8px; }
+  footer.unresolved h2{ font-size:.92rem; margin:0 0 8px; color:var(--warn); }
+  footer.unresolved ul{ margin:0; padding-left:1.1rem; font-size:.85rem; color:#6f5636; }
+  footer.unresolved li{ margin:3px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>{{STORE}}｜{{AREA}}</h1>
+    <p>{{TITLE}}</p>
+  </header>
+  <div class="meta">
+    <span>案件：{{CASE_CODE}}</span>
+    <span>產出：{{DATE}}</span>
+    <span>DLV-PKG-H5</span>
+  </div>
+
+  <div class="legend">
+    每塊右下「<b>複製本區</b>」整塊帶走，貼到對應平台即可（HTTP 環境也能複製）。
+    標 <span class="opt-pill">選用</span> 的區塊本案若不用，填稿時整塊刪除即可。
+    Reels 分鏡與部落格 SEO 收在折疊區，點標題展開。
+  </div>
+
+  <!-- ===== HOOK｜選定爆款標題（文字版＋影片版，非 DLV 內容區） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">HOOK</span><span class="ztitle">選定鉤子</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">爆款標題（文字版，Caption 第一行）：{{HOOK_TEXT}}
+3 秒鉤子（影片版，0-3s 口播）：{{HOOK_VIDEO}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-1 規則→ workflows B-1（IG/FB 長文 800-1000/300-500） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-1</span><span class="ztitle">IG／FB 單篇長文</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-1 IG/FB 長文｜填稿整段替換）{{DLV1_IGFB_LONG}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-5 規則→ workflows B-5（IG 演算法版 Caption 400-450） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-5</span><span class="ztitle">IG 演算法版 Caption</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-5 演算法 Caption 400-450 字，50/200/100/50）{{DLV5_IG_ALGO_CAPTION}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-6 規則→ workflows B-6（Reels 短 caption 200-300） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-6</span><span class="ztitle">Reels Caption 短版</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-6 Reels 短 caption 200-300 字）{{DLV6_REELS_CAPTION}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-3 規則→ workflows B-3（Threads ~420） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-3</span><span class="ztitle">Threads 短版</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-3 Threads ~420 字，結尾開放式問題）{{DLV3_THREADS}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-4 規則→ workflows B-4 / PART IV（Reels 五欄分鏡，折疊） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-4</span><span class="ztitle">Reels 影片分鏡（A 版）</span></div>
+    <details>
+      <summary>展開五欄分鏡 ＋ 口播稿</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-4 五欄分鏡：時間/畫面/字幕/口播/音效 ＋ 口播稿）{{DLV4_REELS_STORYBOARD}}</span></pre></div>
+    </details>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== [選用] DLV-OPT-B 規則→ workflows（長版 Reels 60-90s） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">OPT-B</span><span class="ztitle">長版 Reels（60-90s）</span><span class="opt-badge">選用</span></div>
+    <details>
+      <summary>展開長版分鏡 ＋ 口播稿</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-OPT-B 長版 Reels，品項全到齊版；本案不用可整塊刪）{{DLV_OPT_B}}</span></pre></div>
+    </details>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== [選用] DLV-2 規則→ workflows B-2 / PART IX（部落格 1400+，SEO 折疊） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-2</span><span class="ztitle">部落格 WordPress 長文</span><span class="opt-badge">選用</span></div>
+    <details>
+      <summary>展開部落格全文 ＋ SEO 欄位</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-2 部落格 1400+ 字；無部落格案整塊刪，並於頁尾標註）{{DLV2_BLOG}}
+
+— SEO 欄位 —
+標題：{{SEO_TITLE}}
+網址 slug：{{SEO_SLUG}}
+Meta：{{SEO_META}}
+內鏈：{{SEO_INTERNAL_LINKS}}</span></pre></div>
+    </details>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== [選用] DLV-ADJ-DM 規則→ workflows（私訊範本 200-300） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DM</span><span class="ztitle">私訊範本</span><span class="opt-badge">選用</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-ADJ-DM 留言關鍵字→私訊回個人觀點包 200-300 字）{{DLV_ADJ_DM}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== [選用] DLV-OPT-CARD 規則→ workflows（輪播） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">CARD</span><span class="ztitle">輪播（收藏導向）</span><span class="opt-badge">選用</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-OPT-CARD 輪播逐張文案 ＋ verdict slide；不做可整塊刪）{{DLV_OPT_CARD}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== [共用] 店家資訊 ＋ 優惠/會員福利（跨平台共用） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag" style="background:var(--accent2)">共用</span><span class="ztitle">店家資訊 ＋ 優惠</span></div>
+    <div class="zbody"><pre class="zone-text"><span class="hint">店名：{{STORE}}
+地址：{{ADDRESS}}
+電話：{{PHONE}}
+營業時間：{{HOURS}}
+交通：{{TRANSIT}}
+優惠／會員福利：{{BENEFITS}}
+Hashtag：{{HASHTAGS}}</span></pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- 頁尾未結項：每案動態注入；不放任何 STATE -->
+  <footer class="unresolved">
+    <h2>⚠️ 未結項提醒</h2>
+    <ul>{{UNRESOLVED_ITEMS}}
+      <!-- 例：<li>Amy 待選標題 A/B</li><li>部落格內鏈網址待補</li><li>active_constraints 兩筆例外請 Claude Code 補登</li> -->
+    </ul>
+  </footer>
+
+</div>
+
+<script>
+  function copyZone(btn){
+    var card = btn.closest('.zone');
+    var el = card ? card.querySelector('.zone-text') : null;
+    var text = el ? el.innerText : '';
+    copyText(text, btn);
+  }
+  function copyText(text, btn){
+    function done(ok){ flash(btn, ok); }
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(true); },
+                                                 function(){ fallback(text, done); });
+    } else { fallback(text, done); }
+  }
+  // HTTP / 非 secure context fallback：execCommand + 暫存 textarea
+  function fallback(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly','');
+    ta.style.position = 'fixed'; ta.style.top = '-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e){ ok = false; }
+    document.body.removeChild(ta); done(ok);
+  }
+  function flash(btn, ok){
+    var orig = btn.textContent;
+    btn.textContent = ok ? '已複製 ✓' : '複製失敗，請長按選取';
+    btn.classList.add(ok ? 'ok' : 'err');
+    setTimeout(function(){ btn.textContent = orig; btn.classList.remove('ok','err'); }, 1500);
+  }
+</script>
+</body>
+</html>
