@@ -195,7 +195,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 <!-- AUTO-FILELIST START -->
 | 檔名 | 版本 | 更新日期 | 狀態 |
 |---|---|---|---|
-| `router.md` | Agent v1.0 | 2026-06-23 | 🟢 active |
+| `router.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `changelog.md` | Agent v1.0 + v2.14 | 2026-06-23 | 🟢 active |
@@ -204,7 +204,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `principles.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
 | `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
-| `workflows.md` | Agent v1.0 + v2.14 | 2026-06-23 | 🟢 active |
+| `workflows.md` | Agent v1.0 + v2.14 | 2026-06-26 | 🟢 active |
 <!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾
@@ -277,8 +277,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | 受眾畫像 | `voice.md` |
 | 六區交付包 | `workflows.md` |
 | 交付包裝層 | `workflows.md` |
-| 可複製HTML交付頁 | `workflows.md` |
-| DLV-PKG-H5 | `workflows.md` |
+| 可複製HTML頁 | `workflows.md` |
 | 接案工作流 | `workflows.md` |
 | Reels分鏡製作 | `workflows.md` |
 | IG標題提案SOP | `workflows.md` |
