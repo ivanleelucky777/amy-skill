@@ -1,7 +1,7 @@
 ---
 file: router.md
 version: Agent v1.0
-updated: '2026-06-23'
+updated: '2026-06-30'
 status: active
 provides:
 - 入口點
@@ -195,7 +195,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 <!-- AUTO-FILELIST START -->
 | 檔名 | 版本 | 更新日期 | 狀態 |
 |---|---|---|---|
-| `router.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
+| `router.md` | Agent v1.0 | 2026-06-30 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `changelog.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
