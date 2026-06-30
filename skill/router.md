@@ -198,13 +198,13 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | `router.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `changelog.md` | Agent v1.0 + v2.14 | 2026-06-23 | 🟢 active |
+| `changelog.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
 | `data.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
 | `dictionary.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
 | `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `principles.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `principles.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
 | `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
-| `workflows.md` | Agent v1.0 + v2.14 | 2026-06-26 | 🟢 active |
+| `workflows.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
 <!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾
@@ -263,6 +263,8 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | 寫作原則 | `principles.md` |
 | 三大鐵則 | `principles.md` |
 | 體驗真實性分流 | `principles.md` |
+| 商品案真實性判斷 | `principles.md` |
+| 聯名IP告知框架 | `principles.md` |
 | 不腦補 | `principles.md` |
 | 演算法優先 | `principles.md` |
 | 第一人稱低密度 | `principles.md` |
@@ -276,6 +278,8 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | 語氣樣本庫 | `voice.md` |
 | 受眾畫像 | `voice.md` |
 | 六區交付包 | `workflows.md` |
+| 案型分流 | `workflows.md` |
+| 商品導購案 | `workflows.md` |
 | 交付包裝層 | `workflows.md` |
 | 可複製HTML頁 | `workflows.md` |
 | 接案工作流 | `workflows.md` |
