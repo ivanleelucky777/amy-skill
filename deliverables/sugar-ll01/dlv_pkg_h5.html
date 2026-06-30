@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  DLV-PKG-H5｜交付包裝層（本案填稿版）
+  案件：sugar-ll01｜糖村 ×《桃源深處有人家》聯名・蘿蘿烘焙魔法禮盒 LL01
+  骨架正本：amy-skill/assets/dlv_pkg_h5_template.html
+  owner 規格：amy-skill/workflows.md  PART II「B-PKG」+ PART I「A-7」
+  ------------------------------------------------------------
+  本案處理：
+   - 商品導購案（非探店）：共用區改品牌/導購資訊，無地址/電話/營業時間/交通
+   - 刪除選用塊：DLV-OPT-B / DLV-2 部落格 / DLV-ADJ-DM / DLV-OPT-CARD（無品項遺失）
+   - 主題色 per-case：--accent #E2899E / --accent2 #C99A5B
+   - STATE 一律未烘入；頁尾未結項為本案動態注入
+  ============================================================
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖村 SUGAR&amp;SPICE｜線上商品・全台宅配｜交付包</title>
+<style>
+  /* ↓↓↓ per-case 只改這兩行主題色 ↓↓↓ */
+  :root{ --accent:#E2899E; --accent2:#C99A5B; }
+  /* ↑↑↑ 其餘變數固定，跨案不動 ↑↑↑ */
+  :root{
+    --bg:#eef2f3; --card:#fff; --ink:#1f2a2e; --sub:#7b8a8f;
+    --line:#dde6e8; --accentink:#fff; --radius:14px;
+    --opt:#a98a55; --warn:#9a6a2f;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body{ margin:0; background:var(--bg); color:var(--ink);
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+        line-height:1.75; padding:20px 14px 60px; }
+  .wrap{ max-width:760px; margin:0 auto; }
+
+  header.top{ text-align:center; margin-bottom:6px; }
+  header.top h1{ font-size:1.18rem; margin:0 0 4px; letter-spacing:.5px; }
+  header.top p{ margin:0; color:var(--sub); font-size:.82rem; }
+  .meta{ display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:8px 0 14px; }
+  .meta span{ background:#f1f8fb; border:1px solid var(--line); border-radius:999px;
+              padding:2px 10px; font-size:.72rem; color:var(--sub); }
+
+  /* 圖例說明 */
+  .legend{ background:#f7fafb; border:1px solid var(--line); border-radius:12px;
+           padding:11px 14px; margin:0 0 20px; font-size:.78rem; color:#4a5a60; }
+  .legend b{ color:var(--accent); }
+  .legend .opt-pill{ background:var(--opt); color:#fff; border-radius:5px;
+                     padding:1px 6px; font-size:.68rem; font-weight:700; }
+
+  /* 區塊卡 */
+  .zone{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+         margin:0 0 16px; overflow:hidden; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+  .zhead{ display:flex; align-items:center; gap:8px; padding:12px 14px;
+          border-bottom:1px solid var(--line); background:#f7fafb; }
+  .tag{ font-size:.7rem; font-weight:700; color:var(--accentink); background:var(--accent);
+        border-radius:6px; padding:2px 8px; white-space:nowrap; }
+  .ztitle{ font-size:.92rem; font-weight:700; }
+  .opt-badge{ margin-left:auto; font-size:.66rem; font-weight:700; color:#fff;
+              background:var(--opt); border-radius:5px; padding:2px 7px; }
+  .zbody{ padding:14px; }
+  pre.zone-text{ margin:0; white-space:pre-wrap; word-break:break-word;
+                 font-family:inherit; font-size:.9rem; line-height:1.8; }
+  pre.zone-text .hint{ color:var(--sub); font-style:italic; }
+  .zfoot{ display:flex; justify-content:flex-end; padding:10px 14px; border-top:1px solid var(--line); }
+  .copy{ border:1px solid var(--accent); background:var(--accent); color:var(--accentink);
+         border-radius:999px; padding:7px 18px; font-size:.82rem; cursor:pointer; font-family:inherit; }
+  .copy:active{ opacity:.8; }
+  .copy.ok{ background:#1f8a5b; border-color:#1f8a5b; }
+  .copy.err{ background:#b23b3b; border-color:#b23b3b; }
+
+  /* 折疊（Reels 分鏡） */
+  details{ border-top:1px solid var(--line); }
+  details > summary{ cursor:pointer; list-style:none; padding:12px 14px;
+                     font-size:.85rem; color:var(--accent); font-weight:600; }
+  details > summary::-webkit-details-marker{ display:none; }
+  details > summary::before{ content:"▸ "; }
+  details[open] > summary::before{ content:"▾ "; }
+
+  /* 頁尾未結項 */
+  footer.unresolved{ background:#fff8f1; border:1px solid #f0dcc4; border-radius:var(--radius);
+                     padding:14px 16px; margin-top:8px; }
+  footer.unresolved h2{ font-size:.92rem; margin:0 0 8px; color:var(--warn); }
+  footer.unresolved ul{ margin:0; padding-left:1.1rem; font-size:.85rem; color:#6f5636; }
+  footer.unresolved li{ margin:3px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>糖村 SUGAR&amp;SPICE｜線上商品・全台宅配</h1>
+    <p>糖村 ×《桃源深處有人家》聯名・蘿蘿烘焙魔法禮盒 LL01</p>
+  </header>
+  <div class="meta">
+    <span>案件：sugar-ll01</span>
+    <span>產出：2026-06-30</span>
+    <span>DLV-PKG-H5</span>
+  </div>
+
+  <div class="legend">
+    每塊右下「<b>複製本區</b>」整塊帶走，貼到對應平台即可（HTTP 環境也能複製）。
+    本案為商品導購（非探店），無地址／營業時間。Reels 分鏡收在折疊區，點標題展開。
+  </div>
+
+  <!-- ===== HOOK｜選定爆款標題（文字版＋影片版，非 DLV 內容區） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">HOOK</span><span class="ztitle">選定鉤子</span></div>
+    <div class="zbody"><pre class="zone-text">爆款標題（文字版，Caption 第一行）：
+糖村牛軋糖不黏牙這件事，我幫你實測過了
+
+3 秒鉤子（影片版，0-3s）：
+大字幕「糖村 ×《桃源深處有人家》聯名禮盒」
+口播「牛軋糖不黏牙，我實測給你看」（12 字）</pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-1 規則→ workflows B-1（IG/FB 長文） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-1</span><span class="ztitle">IG／FB 單篇長文</span></div>
+    <div class="zbody"><pre class="zone-text">糖村 ×《桃源深處有人家》聯名的「蘿蘿烘焙魔法禮盒」到貨，先拆給你看 🎁
+
+每次要送禮我都有點頭痛，想送得體面、又怕對方不愛
+這盒我覺得蠻好出手：外盒是聯名的療癒插畫風，環保提把直接拎著走、不用另外裝袋
+每盒還附一張遊戲虛寶卡，有在玩《桃源深處有人家》的可以兌換限定套裝跟頭貼（台港澳），送玩家朋友會加分
+
+裡面三種，我一個一個講：
+
+🍬 法式牛軋糖（糖村招牌）
+奶香真的很濃，杏仁果也夠多
+最有感的是不黏牙，牙齒不會黏得卡卡的，帶長輩跟小孩一起吃我比較放心，Q彈那些算基本盤
+提醒：過敏原有堅果、蛋、奶，會過敏的先看成分
+
+🍵 錫蘭紅茶薄捲餅
+微甜不膩，紅茶香很明顯，一口接一口很順，配茶配咖啡都剛好
+
+🫐 Neosand 蔓越莓
+蔓越莓口味的奶油起司餅乾，甜甜酸酸
+奶油跟起司的香氣跟蔓越莓的酸很搭，不會死甜
+
+老實補一個：糖村牛軋糖不加固化劑，天氣熱會偏軟、冷會變硬，是正常物理現象，建議冷藏、吃前放5-10分鐘回溫最好
+
+整體蠻適合過節送禮、團購、自己當下午茶也可以，要送玩家朋友那張虛寶卡會是亮點
+
+💬 身邊有在玩《桃源深處有人家》的朋友嗎？tag 他來看這盒
+📌 想送禮參考的記得存起來，之後找不到
+🛒 想買的 → ［導購連結］
+
+@sugarspicetw
+#桃源深處有人家 #蘿蘿 #糖村 #amy親子 #聯名禮盒 #伴手禮推薦 #送禮推薦 #合作</pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-5 規則→ workflows B-5（IG 演算法版 Caption） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-5</span><span class="ztitle">IG 演算法版 Caption</span></div>
+    <div class="zbody"><pre class="zone-text">糖村這次跟手遊《桃源深處有人家》聯名，出了一盒「蘿蘿烘焙魔法禮盒」🎁
+過節想找一盒有質感、又不怕踩雷的伴手禮，我先幫你拆開看裡面裝什麼
+
+這盒的主角是法式牛軋糖，糖村招牌
+我自己咬下來最有感的是奶香很濃、而且真的不黏牙，Q彈倒是基本盤
+牙齒不會黏得卡卡的，帶長輩跟小孩吃我比較放心
+（過敏原有堅果、蛋、奶，會過敏的先看一下成分 👀）
+
+還有一點蠻加分：糖村牛軋糖不加固化劑
+天氣冷會變硬、回溫就軟，是正常的，冰過拿出來放5-10分鐘再吃剛剛好
+
+另外兩款也好吃：
+🍵 錫蘭紅茶薄捲餅 ×6｜微甜不膩，紅茶香很明顯，很順口
+🫐 Neosand 蔓越莓 ×6｜蔓越莓口味的奶油起司餅乾，甜甜酸酸，奶油跟起司香很搭
+🍬 法式牛軋糖 ×9｜杏仁果，糖村招牌
+
+6/18 開賣的聯名限定，每盒附遊戲虛寶卡（台港澳可兌換限定套裝＋頭貼）
+送禮或自己留著吃都可以 👇
+🛒 ［導購連結］
+@sugarspicetw
+#桃源深處有人家 #蘿蘿 #糖村 #amy親子 #合作</pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-6 規則→ workflows B-6（Reels 短 caption） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-6</span><span class="ztitle">Reels Caption 短版</span></div>
+    <div class="zbody"><pre class="zone-text">糖村 ×《桃源深處有人家》聯名禮盒，拆給你看 🎁
+
+✅ 法式牛軋糖：奶香濃、不黏牙
+✅ 錫蘭紅茶捲餅：微甜不膩、紅茶香明顯
+✅ Neosand 蔓越莓：奶油起司餅乾，甜酸很搭
+
+最有感的還是牛軋糖，不黏牙這點帶長輩小孩吃比較放心（過敏原有堅果蛋奶要注意）
+每盒附遊戲虛寶卡，玩家朋友會喜歡
+
+有在玩《桃源深處有人家》的朋友，tag 他來看 👀
+要買的點 🛒［導購連結］
+
+@sugarspicetw
+#桃源深處有人家 #蘿蘿 #糖村 #amy親子 #合作</pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-3 規則→ workflows B-3（Threads） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-3</span><span class="ztitle">Threads 短版</span></div>
+    <div class="zbody"><pre class="zone-text">糖村跟手遊《桃源深處有人家》聯名出了一盒「蘿蘿烘焙魔法禮盒」，到貨拆來看
+
+裡面三種：法式牛軋糖、錫蘭紅茶薄捲餅、Neosand 蔓越莓
+牛軋糖是招牌，奶香很濃、不黏牙，帶長輩小孩吃比較放心（過敏原有堅果、蛋、奶）
+紅茶捲餅微甜不膩、紅茶香很明顯
+蔓越莓那款是奶油起司餅乾，甜甜酸酸、奶油起司香很搭
+
+每盒附一張遊戲虛寶卡，台港澳可兌換限定套裝跟頭貼，送玩家朋友蠻加分，6/18 開賣
+
+你送禮會比較看「對方喜不喜歡」還是「夠不夠體面」？
+
+#桃源深處有人家 #蘿蘿 #糖村 #amy親子 #合作
+
+（註：Threads 慣例本不放品牌錨點，但依現行常規 #amy親子 一律必加，故保留。）</pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== DLV-4 規則→ workflows B-4 / PART IV（Reels 五欄分鏡，折疊） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag">DLV-4</span><span class="ztitle">Reels 影片分鏡（🟢 標準版，約 33–37s）</span></div>
+    <details>
+      <summary>展開五欄分鏡 ＋ 口播稿</summary>
+      <div class="zbody"><pre class="zone-text">五欄＝時間／畫面／字幕（A 逐字・B 大字）／口播／音效
+
+【0–3s】
+畫面：禮盒正面特寫（聯名插畫）
+字幕 B：糖村 ×《桃源深處有人家》聯名禮盒
+口播：牛軋糖不黏牙，我實測給你看
+音效：輕快開場
+
+【3–8s】
+畫面：掀盒蓋，三品項入鏡
+字幕 A：這盒是糖村的蘿蘿烘焙魔法禮盒，裡面三種｜B：一盒三種
+口播：這盒是糖村的蘿蘿烘焙魔法禮盒，裡面三種
+音效：拆封聲
+
+【8–17s】
+畫面：拿起牛軋糖、咬一口（⚠️ 不黏的拉示意鏡只有實際拍到才放）
+字幕 A：招牌牛軋糖奶香很濃，咬下去不黏牙｜B：奶香濃 不黏牙
+口播：招牌牛軋糖，奶香很濃，咬下去不黏牙，帶長輩小孩吃比較放心
+音效：咀嚼聲
+
+【17–24s】
+畫面：紅茶捲餅折斷特寫、旁邊一杯茶
+字幕 A：錫蘭紅茶薄捲餅微甜不膩，紅茶香很明顯｜B：微甜不膩 紅茶香
+口播：錫蘭紅茶薄捲餅，微甜不膩，紅茶香很明顯
+音效：酥脆斷裂聲
+
+【24–30s】
+畫面：蔓越莓餅乾剝開
+字幕 A：蔓越莓奶油起司餅乾，甜甜酸酸很搭｜B：蔓越莓 甜酸
+口播：蔓越莓的奶油起司餅乾，甜甜酸酸，奶油起司香很搭
+音效：輕快
+
+【30–37s】
+畫面：禮盒＋虛寶卡、送禮場景
+字幕 A：每盒附虛寶卡，6/18 開賣｜B：附遊戲虛寶卡
+口播：每盒附虛寶卡，送玩家朋友剛好，6/18 開賣，想要的點下面連結
+音效：收尾音
+
+— 口播稿（4-B 整段串接） —
+牛軋糖不黏牙，我實測給你看。這盒是糖村的蘿蘿烘焙魔法禮盒，裡面三種。招牌牛軋糖，奶香很濃，咬下去不黏牙，帶長輩小孩吃比較放心。錫蘭紅茶薄捲餅，微甜不膩，紅茶香很明顯。蔓越莓的奶油起司餅乾，甜甜酸酸，奶油起司香很搭。每盒附虛寶卡，送玩家朋友剛好，6/18 開賣，想要的點下面連結。
+
+⚠️ 守鐵則 1：無「疊滿桌」等暗示份量的腦補鏡頭；牛軋糖拉絲／不黏鏡頭僅實拍才放。</pre></div>
+    </details>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- ===== [共用] 品牌／導購資訊（跨平台共用；本案無實體店資訊） ===== -->
+  <section class="zone">
+    <div class="zhead"><span class="tag" style="background:var(--accent2)">共用</span><span class="ztitle">品牌資訊 ＋ 導購</span></div>
+    <div class="zbody"><pre class="zone-text">品牌：糖村 SUGAR&amp;SPICE
+商品：【桃源深處有人家聯名】蘿蘿烘焙魔法禮盒 LL01
+販售：線上商品・全台宅配（無實體店）
+導購連結：［最終 URL 待確認 — 暫用官網 utm 連結 sugar.com.tw/products/ll01-gift-set］
+標註：@sugarspicetw
+開賣：2026/06/18 聯名限定
+附贈：遊戲虛寶卡（台港澳可兌換限定套裝＋頭貼）
+Hashtag：#桃源深處有人家 #蘿蘿 #糖村 #amy親子 #合作</pre></div>
+    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+  </section>
+
+  <!-- 頁尾未結項：每案動態注入；不放任何 STATE -->
+  <footer class="unresolved">
+    <h2>⚠️ 未結項提醒</h2>
+    <ul>
+      <li>導購連結最終 URL 待確認 — brief 寫「稍後提供」；目前用官網帶 utm 連結佔位，Peggy 給正式連結後替換。</li>
+      <li>上線日待定 — 6/20–6/30 窗口尾端，實際 deadline 待 Peggy 確認。</li>
+      <li>揭露標 — 預設 #合作（Ivan 可改字樣或拿掉）。</li>
+      <li>Amy 口氣二審 — Step 6 最終人聲檢查，未過前此頁為草稿。</li>
+      <li>（商務，非交付頁內容，Ivan 另處理）簽約／發票主體、寄件資料、稿費 $2,000 vs $1,530 金額落差。</li>
+    </ul>
+  </footer>
+
+</div>
+
+<script>
+  function copyZone(btn){
+    var card = btn.closest('.zone');
+    var el = card ? card.querySelector('.zone-text') : null;
+    var text = el ? el.innerText : '';
+    copyText(text, btn);
+  }
+  function copyText(text, btn){
+    function done(ok){ flash(btn, ok); }
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){ done(true); },
+                                                 function(){ fallback(text, done); });
+    } else { fallback(text, done); }
+  }
+  // HTTP / 非 secure context fallback：execCommand + 暫存 textarea
+  function fallback(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly','');
+    ta.style.position = 'fixed'; ta.style.top = '-9999px';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch(e){ ok = false; }
+    document.body.removeChild(ta); done(ok);
+  }
+  function flash(btn, ok){
+    var orig = btn.textContent;
+    btn.textContent = ok ? '已複製 ✓' : '複製失敗，請長按選取';
+    btn.classList.add(ok ? 'ok' : 'err');
+    setTimeout(function(){ btn.textContent = orig; btn.classList.remove('ok','err'); }, 1500);
+  }
+</script>
+</body>
+</html>
