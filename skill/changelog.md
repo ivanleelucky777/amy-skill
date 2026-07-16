@@ -1,7 +1,7 @@
 ---
 file: changelog.md
-version: Agent v1.0 + v2.16
-updated: '2026-06-30'
+version: Agent v1.0 + v2.17
+updated: '2026-07-16'
 status: active
 provides:
 - 版本演進沿革
@@ -203,6 +203,19 @@ sections:
 | 🆕 聯名 / IP 框架(principles 鐵則 1 延伸) | 未親自體驗的聯名 IP / 手遊 → 告知語氣;本人有玩才貼近第一人稱(非新鐵則,為「活動=告知」延伸) |
 | 📦 並記:deliverables/sugar-ll01/ H5 交付頁 | pipeline ③ 首次跑通(產出見 CHG-2026-06-30-01,交付產出非規則變更) |
 
+### 🌟 v2.17(2026-07-16):治理批次 — B 版必出 + 四環境同步 + 雙引擎主從 + 版本標示 + 演算法月檢
+**觸發**:sugar-ll01 後批次沉澱(DLV-OPT-B 實務上已每案必產)+ ChatGPT Project 導入為第二產文引擎(比稿制),需明文化跨環境同步與主從治理,並解決總版本號散落問題;另 Ivan 要求建立 Meta/FB/IG/Threads 演算法月度主動巡檢機制
+**CHG 分類**:R(規則:DLV-OPT-B 必出、四環境同步、雙引擎主從、演算法月檢 SOP)+ S(結構:router.md 頂部 Skill Version 版本行、check.py 新增 VERSION 檢查)—— 對應 commit `CHG-2026-07-16-01`,動 workflows.md / router.md / changelog.md + check.py
+
+| 改動 | 詳情 |
+|------|------|
+| 🔧 DLV-OPT-B 選配 → **必出**(workflows 附帶產出表) | 不分案型文案一律產出;發不發、發哪個平台由 Ivan 決定(對齊 SECTION 0 第 5 條「取捨權歸 Ivan」)。owner=附帶產出表;B-PKG 插槽與 D-6 僅引用 |
+| 🆕 四環境同步(router 治理守則 7) | GitHub=SSOT;SGP1 / Claude Project / ChatGPT Project 皆為快取;進版依序同步、完整替換檔;各 AI 產文前回報版本號防漂移 |
+| 🆕 雙引擎主從(router 治理守則 8) | Claude=主系統(生產),ChatGPT=次系統(比稿);三邊界:裁決只在主系統 / 沉澱單向(次系統只是同步終點)/ 次系統輸出視同外稿再掃一次 |
+| 🆕 router.md 頂部 Skill Version 版本行 | 全系統總版本號**唯一 owner**;changelog 只記沿革不作版本源;進版=改版本行+changelog 條目 |
+| 🆕 check.py VERSION 檢查 | 比對 router 版本行 vs changelog 最新版號,不一致紅燈擋 commit(與 COUNT/DEDUP 並列)|
+| 🆕 演算法月度巡檢 SOP(workflows PART XI) | 三層降級觸發:**Cowork Scheduled 排程任務(情報員型,雲端自動掃描)首選** → 每週+skip 備援 → SGP1 cron→LINE 備援;Cowork 只收集情報、判讀沉澱在主系統(對齊治理守則 8);四路掃描(IG/FB/Threads/產業報告)對照 data.md;報告格式 🆕/🔧/✅/🟡;採納才進版,無變化不動檔 |
+
 ---
 
 ## 📋 SECTION B:規則生死簿
@@ -297,6 +310,14 @@ sections:
 | 早期(各案臨時) | 六區交付用純 MD/code block,或臨時做 HTML 可複製頁(桂冠/國產鮮乳/金鮮滿屋/好食多) | ~2026-06 前 |
 | 🆕 制度化(v2.14) | **DLV-PKG-H5 交付包裝層**:好食多版鎖為標準骨架,全案件預設輸出可複製 HTML 頁 | 2026-06-23 |
 | 現役狀態 | 包裝層,套 `assets/` 骨架;不佔 DLV 內容區編號;STATE 不進骨架 |
+
+### B-13 Reels B 版(DLV-OPT-B)產出定位
+| 階段 | 內容 | 日期 |
+|------|------|------|
+| 誕生(v2.9) | Reels 雙版本廠商業配**預設必跑**(A 版短觸及 + B 版長品項齊) | 2026-05-22 |
+| 調整(Agent v1.0 ~ v2.16) | B 版列「附帶產出」**選配**:多平台二發或品項全曝光時才產 | 2026-05-29 |
+| 🔧 回歸(v2.17) | **必出**(不分案型):文案一律產出,發布與否歸 Ivan(實務上已每案必產,規則追認現狀) | 2026-07-16 |
+| 現役狀態 | 必出產出;owner=workflows PART II「附帶產出」表 |
 
 ---
 

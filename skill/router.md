@@ -1,7 +1,7 @@
 ---
 file: router.md
 version: Agent v1.0
-updated: '2026-06-30'
+updated: '2026-07-16'
 status: active
 provides:
 - 入口點
@@ -11,6 +11,9 @@ provides:
 - 規則索引
 - 衝突清單
 - 決策節點
+- Skill總版本號
+- 四環境同步
+- 雙引擎主從
 sections:
 - SECTION A
 - SECTION B
@@ -24,6 +27,11 @@ sections:
 ---
 
 # 🎛️ Amy Skill Agent｜Router（進入點）
+
+Skill Version: v2.17
+Last Updated: 2026-07-16
+
+> **版本行說明(v2.17 起)**:上方 `Skill Version` 行是**全系統總版本號的唯一 owner**。`changelog.md` 只記沿革、不作版本源;其他檔 frontmatter 的 version 欄僅標示該檔自身整合到哪版。進版 SOP:改本行 + changelog 新增條目,check.py VERSION 檢查兩者一致(紅燈擋 commit)。任何 AI 回報 Skill 版本一律以本行為準。
 
 > **本檔性質**：所有 Claude 對話啟動時**第一個**讀取的檔案
 > **建立日期**：2026-05-29
@@ -174,6 +182,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 2. 動檔前先看 `changelog.md`，確認該規則是否已存在或被推翻過
 3. 新規則寫入後，同步更新本檔（router.md）的 SECTION E 索引表
 4. 任何改動寫入 `changelog.md` 時間線
+5. **進版時同步改本檔頂部 `Skill Version` 行**(總版本號唯一 owner),與 changelog 最新條目保持一致(check.py VERSION 檢查)
 
 ---
 
@@ -195,16 +204,16 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 <!-- AUTO-FILELIST START -->
 | 檔名 | 版本 | 更新日期 | 狀態 |
 |---|---|---|---|
-| `router.md` | Agent v1.0 | 2026-06-30 | 🟢 active |
+| `router.md` | Agent v1.0 | 2026-07-16 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `changelog.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
+| `changelog.md` | Agent v1.0 + v2.17 | 2026-07-16 | 🟢 active |
 | `data.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
 | `dictionary.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
 | `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `principles.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
 | `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
-| `workflows.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
+| `workflows.md` | Agent v1.0 + v2.17 | 2026-07-16 | 🟢 active |
 <!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾
@@ -229,6 +238,9 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | 規則索引 | `router.md` |
 | 衝突清單 | `router.md` |
 | 決策節點 | `router.md` |
+| Skill總版本號 | `router.md` |
+| 四環境同步 | `router.md` |
+| 雙引擎主從 | `router.md` |
 | 帳號健康度 | `account_health.md` |
 | 略過率監測 | `account_health.md` |
 | IG健康度 | `account_health.md` |
@@ -290,6 +302,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | CTA三層 | `workflows.md` |
 | 法規處理SOP | `workflows.md` |
 | WordPress部落格 | `workflows.md` |
+| 演算法月檢 | `workflows.md` |
 <!-- AUTO-INDEX END -->
 
 ---
@@ -379,6 +392,8 @@ archive/
 4. 歷史/退版文字用 suppress 標記(已退版/已升級/沿革語境),不竄改史實。
 5. 舊案不回改編號,靠對照表翻譯(五區→六區、第5區→DLV-6、1-D→DLV-5)。
 6. STATE 檔(account_health/performance_log/active_constraints)不進 skill 打包。
+7. **四環境同步(v2.17)**:GitHub `amy-skill` 為唯一正本(SSOT);SGP1 鏡像、Claude Project 知識庫、ChatGPT Project 知識庫皆為快取。版本沉澱進版時依序同步:GitHub 正本 → SGP1 → Claude Project → ChatGPT Project,一律用**完整替換檔**(不用 diff)。快取與正本衝突時以正本為準;各 AI 產文前回報載入版本號,版本不符即為漂移警訊。
+8. **雙引擎主從(v2.17)**:Claude Project 為**主系統**(生產環境),ChatGPT Project 為**次系統**(比稿引擎),一套標準、兩級執行權限。三邊界:(a) **裁決權**——規則解讀、衝突裁定、Skill 升級只在主系統定案,次系統對規則有疑義時拿回主系統,不自行解釋;(b) **沉澱單向**——不論哪邊產出勝出,規則沉澱一律走 主系統討論 → GitHub 正本 → 同步四環境,次系統永遠是同步終點、不是起點;(c) **次系統輸出視同外稿**——進交付流程前依主系統規則掃一次(體驗真實性、禁用詞、字數規格),等同外部初稿待審。
 
 ---
 
