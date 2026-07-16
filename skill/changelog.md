@@ -1,6 +1,6 @@
 ---
 file: changelog.md
-version: Agent v1.0 + v2.17
+version: Agent v1.0 + v2.18
 updated: '2026-07-16'
 status: active
 provides:
@@ -215,6 +215,18 @@ sections:
 | 🆕 router.md 頂部 Skill Version 版本行 | 全系統總版本號**唯一 owner**;changelog 只記沿革不作版本源;進版=改版本行+changelog 條目 |
 | 🆕 check.py VERSION 檢查 | 比對 router 版本行 vs changelog 最新版號,不一致紅燈擋 commit(與 COUNT/DEDUP 並列)|
 | 🆕 演算法月度巡檢 SOP(workflows PART XI) | 三層降級觸發:**Cowork Scheduled 排程任務(情報員型,雲端自動掃描)首選** → 每週+skip 備援 → SGP1 cron→LINE 備援;Cowork 只收集情報、判讀沉澱在主系統(對齊治理守則 8);四路掃描(IG/FB/Threads/產業報告)對照 data.md;報告格式 🆕/🔧/✅/🟡;採納才進版,無變化不動檔 |
+
+### 🌟 v2.18(2026-07-16):演算法月檢首航 — 數據刷新 + Amy 白話月報固定化
+**觸發**:PART XI 首次執行(Cowork 情報員 2026-07 情報包 → 主系統判讀 → Ivan 裁決採納)
+**CHG 分類**:T(數據:data.md 刷新)+ R(規則:K-3b Amy 白話月報為固定第二產出)—— 對應 commit `CHG-2026-07-16-02`,動 data.md / workflows.md / changelog.md / router.md(版本行)
+
+| 改動 | 詳情 |
+|------|------|
+| 🆕 data.md D-1b | Threads 2026-06 功能包:5 億 MAU、Communities、**台灣在地社群首波上線**(Amy 利基新分發面,D-3 增卡位盤點待辦);Your Algo、Private Likes/Live Chats 列 🟡 |
+| 🆕 data.md A-3 擴大 | IG Your Algorithm 四入口擴大測試(2026-06),主題一致性權重再升 |
+| 🔧 data.md 數據刷新 | G-1 大盤 ER 0.48% 年減 24%(恢復期判讀提醒);B-2 Q2 排序確認輪播>Reels>單圖;F-2/F-3 長度曲線 + >3 分鐘硬天花板(**A 版 30-45s 分軌不動**);B-1b 原創獎勵補官方正本;G-3 補週三 + 晚間 18:00-23:00 窗;I-1/I-2 來源庫更新 |
+| 🟡 不採納 | Metricool hashtag 反向數據(單一來源,B-7 紀律不變,列 2026-08 指定重驗);Buffer sends per reach 最強說(官方排序未動,不重排) |
+| 🆕 workflows K-3b | Amy 白話市場月報 = 月檢固定第二產出(主系統產,Cowork 不判讀);只寫已裁決結論,🟡 不放 |
 
 ---
 

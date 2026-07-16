@@ -28,7 +28,7 @@ sections:
 
 # 🎛️ Amy Skill Agent｜Router（進入點）
 
-Skill Version: v2.17
+Skill Version: v2.18
 Last Updated: 2026-07-16
 
 > **版本行說明(v2.17 起)**:上方 `Skill Version` 行是**全系統總版本號的唯一 owner**。`changelog.md` 只記沿革、不作版本源;其他檔 frontmatter 的 version 欄僅標示該檔自身整合到哪版。進版 SOP:改本行 + changelog 新增條目,check.py VERSION 檢查兩者一致(紅燈擋 commit)。任何 AI 回報 Skill 版本一律以本行為準。
@@ -207,13 +207,13 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | `router.md` | Agent v1.0 | 2026-07-16 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `changelog.md` | Agent v1.0 + v2.17 | 2026-07-16 | 🟢 active |
-| `data.md` | Agent v1.0 + v2.13 | 2026-06-09 | 🟢 active |
+| `changelog.md` | Agent v1.0 + v2.18 | 2026-07-16 | 🟢 active |
+| `data.md` | Agent v1.0 + v2.18 | 2026-07-16 | 🟢 active |
 | `dictionary.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
 | `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `principles.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
 | `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
-| `workflows.md` | Agent v1.0 + v2.17 | 2026-07-16 | 🟢 active |
+| `workflows.md` | Agent v1.0 + v2.18 | 2026-07-16 | 🟢 active |
 <!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾

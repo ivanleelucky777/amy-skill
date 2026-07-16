@@ -1,7 +1,7 @@
 ---
 file: data.md
-version: Agent v1.0 + v2.13
-updated: '2026-06-09'
+version: Agent v1.0 + v2.18
+updated: '2026-07-16'
 status: active
 provides:
 - IG演算法數據
@@ -76,7 +76,7 @@ sections:
 > **建立日期**:2026-05-29
 > **架構版本**:Agent v1.0
 > **狀態**:🟢 現役
-> **整合來源**:v2.3-v2.12 + Mosseri 公開、Socialinsider/Buffer/Rival IQ 2026 報告 + Amy 帳號實際數據 + v2.13(2026-06-09)
+> **整合來源**:v2.3-v2.12 + Mosseri 公開、Socialinsider/Buffer/Rival IQ 2026 報告 + Amy 帳號實際數據 + v2.13(2026-06-09)+ v2.18(2026-07 演算法月檢首航採納項,2026-07-16)
 
 ---
 
@@ -112,13 +112,14 @@ sections:
 
 **核心結論**:2026 不獎勵按讚,獎勵「真正有人想傳給朋友的內容」。
 
-## A-3:Your Algorithm 革命(2026 初全球推出)
+## A-3:Your Algorithm 革命(2026 初全球推出,2026-06 擴大)
 
 - 用戶可自選想看的主題類別
 - 你沒在用戶的訂閱清單上 = 你不存在
 - **利基清晰(一個明確主題)是 2026 創作者生存條件**
 - Amy 的利基:**親子美食 + 全台探店**(北部含量較高)
-- 來源:Meta 官方 2026 初 / 多家分析
+- 🆕 **2026-06 擴大測試**:四入口(首頁下拉主題面板、Reels 間「想看/不想看」控制、Reels 下方偏好按鈕、對話式微調);Mosseri 稱要讓 Your Algorithm 從一項設定變成「體驗核心」。含義:「不想看」按鈕就插在 Reels 之間,**主題一致性直接影響去留**,利基紀律比以往更重
+- 來源:Meta 官方 2026 初 / TechCrunch + Social Media Today 2026-06-27~28(v2.18 月檢)
 
 ---
 
@@ -137,7 +138,7 @@ sections:
 
 | 規則 | 內容 | 來源 |
 |------|------|------|
-| 原創獎勵 | 原創內容比轉貼多 40-60% 分發 | Mosseri 2026-01 |
+| 原創獎勵 | 原創內容比轉貼多 40-60% 分發 | Mosseri 2026-01;官方正本:Meta Newsroom〈Rewarding Original Creators on Facebook〉2026-03-13(v2.18 補) |
 | 搬運懲罰 | 30 天內 10+ 次純轉貼 → 帳號被推薦系統排除 | Mosseri 2026-01 |
 | 浮水印門檻 | 帶他站浮水印(TikTok/CapCut)→ 被 Explore 排除 | 2026 |
 | 校正 | 自家品牌 logo 浮水印不傷觸及;禁的是「開頭品牌 intro 占掉鉤子」與「他站浮水印」 | Mosseri 2026 |
@@ -157,6 +158,7 @@ sections:
 - **美食探店類 Carousels 有效**(Rival IQ 2026 報告 / Buffer 2026 分析 52M+ 貼文 → carousel 對 reels 多 +109% 互動)
 - v2.6 寫的「美食不做輪播」**已過時且錯誤**
 - 建議混合比例:**60-70% Reels + 20-30% Carousels + 10% 單圖**
+- 🆕 **Q2 刷新(v2.18)**:Socialinsider 持續更新頁(2026-07-15)以粉絲數為分母:輪播 0.55% > Reels 0.52% > 單圖 0.37%,相對排序不變;Metricool 2026-06(2,430 萬貼文):輪播儲存數 = 單圖 9 倍、Reels 互動數 = 單圖 4 倍、單圖全面衰退(互動率 -45.98%)。**絕對值不可跨來源比較(分母不同),只看相對排序**
 
 ## B-3:Reels 三秒法則
 
@@ -209,6 +211,7 @@ sections:
 | **品牌錨點** | 1 個(如 `#amy親子`) | 業界共識 |
 | **超在地** | 3-4 個(`#永和仁愛路美食` > `#美食`) | Local SEO 2026 |
 | **Hashtag follow 機制** | 已無效,改用 Caption SEO | usevisuals 2026 |
+| 🟡 **反向數據(待驗證)** | Metricool 2026-06 稱用 hashtag 的貼文觀看少 31.7%(相關非因果,單一來源,與 Funnl.ai 打架)。**紀律不變:3-5 個 + #amy親子 錨點 + 廠商 tag 照舊**;列下月月檢指定重驗項 | Metricool 2026-06(v2.18) |
 
 ## B-8:DM 分享觸發句設計
 
@@ -274,6 +277,16 @@ sections:
 | **最強信號** | 回覆速度(前 30-90 分鐘 replies)+ 對話深度 | 2026 |
 | **連結反轉** | Mosseri 已反轉連結懲罰,帶 URL(部落格/訂位)現在表現更好 | Mosseri 2026 |
 
+## D-1b:2026-06 功能包 — Communities 時代(v2.18 月檢新增)
+
+| 重點 | 內容 | 來源 |
+|------|------|------|
+| **5 億 MAU + Communities** | 社群中心、社群圖示、進度追蹤、社群冠軍制度擴大 | Meta 官方 2026-06-16 |
+| **台灣在地社群首波上線** 🔴 | 原生語言在地社群,首波:日本、韓國、**台灣**。= 平台原生的「主題化觸及」新入口,Amy 利基(親子美食+全台探店)可直接卡位 | Meta 官方 2026-06-16 |
+| **Your Algo 用戶自調** | 用戶可要求多看/少看某主題,效期 1/3/7 天,與 Dear Algo 整合;首波美加英澳紐(台灣未上) | Meta 官方 2026-06-16 |
+| 🟡 Private Likes | 按讚可設僅本人與作者可見;排序信號(後台計算)不受影響,公開社交證明效果可能弱化,觀察 | Threads 官方 @threads / SocialBee 2026-07-08 |
+| 🟡 Live Chats 擴充 | 自動翻譯、共同主持、社群冠軍可開室;與 Amy 現行內容形態暫無交集 | TechCrunch 2026-06-30 |
+
 ## D-2:結尾 CTA 設計
 
 | 類型 | 範例方向 |
@@ -289,6 +302,7 @@ sections:
 - ☐ Threads 圖文 vs 純文字的演算法差異
 - ☐ 同步發布 IG vs Threads 是否觸及不同受眾
 - ☐ Amy 帳號實際 Threads 數據
+- ☐ 台灣在地社群盤點:找出親子/美食相關社群,評估加入與經營策略(v2.18 新增,對應 D-1b)
 
 ---
 
@@ -373,6 +387,7 @@ sections:
 | 平台 | 最佳長度 | 來源 |
 |------|---------|------|
 | IG Reels | 15-30 秒(美食探店) | Searchlab 2026 |
+| IG Reels 全品類曲線(v2.18) | 45-60s 互動率最高 0.35%;120-180s 仍有 0.33%;**>180s 驟降 0.15% 且被排除出非粉 Reels 分頁** | Socialinsider 2026-07-14 |
 | TikTok | 21-34 秒 | TikTok 官方 2026 |
 | YouTube Shorts | 30-60 秒 | YouTube 2026 |
 | Facebook Reels | 同 IG Reels | Meta 2026 |
@@ -384,6 +399,7 @@ sections:
 ❌ **「Reels 最佳 30-90 秒」**(v2.6) — v2.7 修正為 15-30 秒(美食探店),Agent v1.0 進一步分軌
 ❌ **「60 秒以上 Reels 會被懲罰」** — IG 自身已取消,2026 起最長 3 分鐘可被推薦給非粉(CreatorFlow / Clixie 2026-02)。
    ※ 但 Amy 食探店仍維持 30-45s,理由從「怕被罰」→「完播率較顧得住」:長片 ≠ 優勢,長片 + 高留存才是。
+❌ **「越長越好」誤讀(v2.18 預防性標註)** — Socialinsider 2026-07 顯示全品類 45-60s 互動率最高,但那是跨產業 ER 統計;Amy 帳號 skip rate 仍在危險區,恢復期加長影片是反指標。**A 版 30-45s / 自費 15-25s 分軌不動**;>3 分鐘 = 非粉分發硬天花板(B 版 60-90s 安全);待帳號回警戒區以下再重新評估長度上探。
 
 ## F-4:片長依字數動態決定(Doze GI 案學習)
 
@@ -405,6 +421,9 @@ sections:
 | Carousels(美食) | 1.92%(超越 Reels) | Rival IQ 2026 |
 | Reels(美食) | 1.74% | Socialinsider 2026 |
 | 單張(美食) | 1.22% | Socialinsider 2026 |
+| 🆕 IG 大盤 ER(Q2 刷新) | 0.48%,**年減 24%**(粉絲數分母;絕對值不可與上列 Q1 數字直接比) | Socialinsider 持續更新頁 2026-07-15 |
+
+> ⚠️ **恢復期判讀提醒(v2.18)**:大盤互動率全面下滑中,看 Amy 數據時先扣掉產業性衰退,別把大盤跌勢誤判成帳號惡化。
 
 ## G-2:Location Tag 紅利
 
@@ -421,6 +440,8 @@ sections:
 | **平日 18:00**(下班晚餐決策) | IG Reels 主推 | 業界統計 2026 |
 | **週四 18:00**(週末規劃啟動) | IG Reels(衝陌生觸及) | Amy 觀察 |
 | **週六 10:00**(週末早午餐查詢) | IG 單張 | 業界統計 |
+| 🆕 **週三**(整體最佳發文日) | IG 全格式 | Buffer 2026-07(960 萬貼文) |
+| 🆕 **晚間 18:00-23:00**(Reels 最佳窗,週三/四最強) | IG Reels | Buffer 2026-07 |
 
 ## G-4:美食探店 Carousels 格式
 
@@ -492,6 +513,8 @@ sections:
 | **IG 後台 2026-04-15** | Skip Rate 新指標 | PART B-1 第四信號、PART H |
 | **Meta 官方 Your Algorithm** | 用戶自選主題類別、利基經營重要性 | PART A-3 |
 | **Meta MSI 機制**(2023 起) | FB 演算法核心 | PART C-2 |
+| **Meta Newsroom 2026-03-13** | 原創獎勵官方正本〈Rewarding Original Creators on Facebook〉 | PART B-1b |
+| **Meta 官方 2026-06-16** | Threads 5 億 MAU + Communities + 台灣在地社群 + Your Algo | PART D-1b |
 
 ## I-2:第三方產業報告
 
@@ -508,6 +531,10 @@ sections:
 | **Storrito 2026** | Saves 是 carousel 最強信號 | 2026 |
 | **CreatorFlow / Clixie 2026** | 60 秒 Reels 懲罰取消,最長 3 分鐘可被推薦 | 2026-02 |
 | **Metricool 2026** | skip rate 取代舊 view rate | 2026-02 |
+| **Metricool 2026 研究** | 37.5 萬帳號/2,430 萬貼文:輪播儲存 9×、留言 CTA +202.78%、帶問題 +36.7%、單圖衰退;hashtag 反向數據列 🟡 待驗證 | 2026-06-16 |
+| **Socialinsider Reels 長度** | 全品類 45-60s 最佳 0.35%;>180s 排除非粉分頁 | 2026-07-14 |
+| **Buffer 2026-07** | 960 萬貼文:sends per reach 為最強信號說(官方排序未動,不重排)、週三最佳、Reels 晚間 18:00-23:00、週發 3-5 次 | 2026-07-14 |
+| **Socialinsider 基準頁(持續更新)** | IG 大盤 ER 0.48% 年減 24%;輪播 0.55 > Reels 0.52 > 單圖 0.37(粉絲分母) | 2026-07-15 刷新 |
 
 ## I-3:Amy 帳號實際數據(內部累積)
 
@@ -542,6 +569,7 @@ sections:
 ## 🔄 SECTION X:本檔維護 SOP
 
 ### Claude 自動更新時機
+- **演算法月檢採納項(workflows PART XI)→ 經 Ivan 裁決後寫入對應 PART**(v2.18 起)
 - 新案件帶來新數據 → 寫入對應 PART
 - 演算法重大更新 → 更新 PART A/B,標記新來源
 - Amy 帳號數據變動 → 更新 PART H-2(同步 `state/account_health.md`)
@@ -562,6 +590,6 @@ sections:
 
 > 下個更新預期:
 > 1. FB / Threads / WordPress 補上 Amy 帳號實際數據
-> 2. IG 演算法 2026 Q3 後重新驗證
+> 2. 下月月檢(2026-08)指定重驗:hashtag 效益矛盾(Funnl.ai 2026-01 已滿 6 個月 vs Metricool 2026-06)
 > 3. 部落格累積 30+ 篇後寫實際內部連結策略
 > 4. 未來開 YouTube Shorts / TikTok → 新增對應 PART
