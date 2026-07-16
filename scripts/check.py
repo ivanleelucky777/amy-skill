@@ -240,6 +240,35 @@ def check5_dedup(fname: str, body: str) -> list[str]:
     return errs
 
 
+# ── Check 6: 版本一致性 (router.md ↔ changelog.md) ──────────────────────────
+
+# router.md 頂部總版本號唯一 owner；取 body 第一個匹配
+ROUTER_VERSION_RE = re.compile(r"^Skill Version:\s*(v\d+\.\d+)", re.MULTILINE)
+# changelog.md frontmatter version 欄，取結尾版號（"Agent v1.0 + v2.17" → v2.17）
+CHANGELOG_VERSION_RE = re.compile(r"v(\d+\.\d+)")
+
+
+def read_versions(all_files: dict) -> tuple[str | None, str | None]:
+    """回傳 (router 版本, changelog 版本)，任一讀不到為 None。"""
+    router_ver = None
+    if "router.md" in all_files:
+        _, body, _ = all_files["router.md"]
+        if isinstance(body, str):
+            m = ROUTER_VERSION_RE.search(body)
+            if m:
+                router_ver = m.group(1)
+
+    changelog_ver = None
+    if "changelog.md" in all_files:
+        meta, _, _ = all_files["changelog.md"]
+        if isinstance(meta, dict):
+            matches = CHANGELOG_VERSION_RE.findall(str(meta.get("version", "")))
+            if matches:
+                changelog_ver = "v" + matches[-1]
+
+    return router_ver, changelog_ver
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
@@ -278,6 +307,16 @@ def main():
             print(e)
     else:
         print(f"\nOK    [global] COUNT — 數字一致")
+
+    # Global check: 版本一致性
+    router_ver, changelog_ver = read_versions(all_files)
+    if router_ver and changelog_ver and router_ver == changelog_ver:
+        print(f"OK    [global] VERSION — router.md={router_ver} changelog.md={changelog_ver} 一致")
+    else:
+        all_ok = False
+        print(f"FAIL  [global] VERSION")
+        print(f"  [VERSION] router.md={router_ver} changelog.md={changelog_ver}"
+              f" 不一致，進版時兩處必須同步修改")
 
     print()
     if all_ok:
