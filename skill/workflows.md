@@ -1,7 +1,7 @@
 ---
 file: workflows.md
-version: Agent v1.0 + v2.17
-updated: '2026-07-16'
+version: Agent v1.0 + v2.18
+updated: '2026-07-27'
 status: active
 provides:
 - 六區交付包

@@ -14,6 +14,7 @@
   【填稿步驟 A-7】把各 .zone-text 內的提示替換成本案內容；ID-pointer 見每塊註解
   【鐵則】區的字數/結構規則只在 workflows B-1~B-6，本檔不複寫；STATE 絕不烘進來
   ============================================================
+  【v2 2026-07-27】DLV-4 佔位符展開為 4-A/B/C/D 四折疊（對齊 workflows B-4 四件規格）；copyZone 支援 details 內容抓取。
 -->
 <html lang="zh-Hant">
 <head>
@@ -97,6 +98,7 @@
     <span>案件：{{CASE_CODE}}</span>
     <span>產出：{{DATE}}</span>
     <span>DLV-PKG-H5</span>
+    <span>骨架 v2 · Skill v2.18</span>
   </div>
 
   <div class="legend">
@@ -141,14 +143,29 @@
     <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
   </section>
 
-  <!-- ===== DLV-4 規則→ workflows B-4 / PART IV（Reels 五欄分鏡，折疊） ===== -->
+  <!-- ===== DLV-4 規則→ workflows B-4 / PART IV（Reels 五欄分鏡，四折疊 4-A/B/C/D） ===== -->
   <section class="zone">
     <div class="zhead"><span class="tag">DLV-4</span><span class="ztitle">Reels 影片分鏡（A 版）</span></div>
     <details>
-      <summary>展開五欄分鏡 ＋ 口播稿</summary>
-      <div class="zbody"><pre class="zone-text"><span class="hint">（DLV-4 五欄分鏡：時間/畫面/字幕/口播/音效 ＋ 口播稿）{{DLV4_REELS_STORYBOARD}}</span></pre></div>
+      <summary>4-A 分鏡表（五欄：時間/畫面/字幕/口播/音效）</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（4-A 五欄分鏡表）{{DLV4_STORYBOARD_TABLE}}</span></pre></div>
+      <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
     </details>
-    <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+    <details>
+      <summary>4-B 純文字口播稿（配音用）</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（4-B 純口播稿，配音直接念）{{DLV4_VO_SCRIPT}}</span></pre></div>
+      <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+    </details>
+    <details>
+      <summary>4-C 純文字字幕稿（B 層大字，後製用）</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（4-C B層大字幕逐行，後製打字幕）{{DLV4_SUBTITLE}}</span></pre></div>
+      <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+    </details>
+    <details>
+      <summary>4-D 音效素材清單（給後製搜尋音源）</summary>
+      <div class="zbody"><pre class="zone-text"><span class="hint">（4-D 音效清單，逐段對應）{{DLV4_SFX}}</span></pre></div>
+      <div class="zfoot"><button class="copy" onclick="copyZone(this)">複製本區</button></div>
+    </details>
   </section>
 
   <!-- ===== [選用] DLV-OPT-B 規則→ workflows（長版 Reels 60-90s） ===== -->
@@ -216,8 +233,8 @@ Hashtag：{{HASHTAGS}}</span></pre></div>
 
 <script>
   function copyZone(btn){
-    var card = btn.closest('.zone');
-    var el = card ? card.querySelector('.zone-text') : null;
+    var scope = btn.closest('details') || btn.closest('.zone');
+    var el = scope ? scope.querySelector('.zone-text') : null;
     var text = el ? el.innerText : '';
     copyText(text, btn);
   }
