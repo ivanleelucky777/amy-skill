@@ -4,9 +4,6 @@
 *.bak_*
 assets/*.bak_*
 
-# Claude Code 本機專案指令檔（機器層設定，不隨 repo 散布）
-CLAUDE.md
-
 # Python
 __pycache__/
 *.pyc
