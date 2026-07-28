@@ -228,6 +228,16 @@ sections:
 | 🟡 不採納 | Metricool hashtag 反向數據(單一來源,B-7 紀律不變,列 2026-08 指定重驗);Buffer sends per reach 最強說(官方排序未動,不重排) |
 | 🆕 workflows K-3b | Amy 白話市場月報 = 月檢固定第二產出(主系統產,Cowork 不判讀);只寫已裁決結論,🟡 不放 |
 
+### 🌟 v2.18 附帶(2026-07-27):DLV-PKG-H5 模板 v2 + 詞庫控量
+
+| 改動 | 詳情 |
+|------|------|
+| 🆕 H5 模板 DLV-4 展開四折疊 | assets/dlv_pkg_h5_template.html:{{DLV4_REELS_STORYBOARD}} 拆為 4-A 分鏡/4-B 口播/4-C 字幕/4-D 音效四折疊,對齊 workflows B-4 既有「四件」規格;copyZone 改抓最近 details 範圍 |
+| 🆕 模板進 Claude Project | 根治「Project 內無模板→憑記憶手刻→版型落後」的系統性缺口(nextdoor 案暴露) |
+| 🆕 四環境版本對齊 v2.18 | 順修 workflows.md front-matter v2.17→v2.18,消除與 router/changelog 不一致 |
+| 🔄 爆漿/香氣四溢 解禁控量 | 從 🔴 禁用改為 🟡 可用,同篇限 1 次(來源:nextdoor 案 Ivan 裁定) |
+| 📝 VanHex 正本補登 | §9 補 amy-skill repo、§4 Blog Agent 依賴改不綁版本(work-reminder repo,非 skill) |
+
 ---
 
 ## 📋 SECTION B:規則生死簿
