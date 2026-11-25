@@ -1,7 +1,7 @@
 ---
 file: router.md
 version: Agent v1.0
-updated: '2026-07-27'
+updated: '2026-11-25'
 status: active
 provides:
 - 入口點
@@ -28,8 +28,8 @@ sections:
 
 # 🎛️ Amy Skill Agent｜Router（進入點）
 
-Skill Version: v2.18
-Last Updated: 2026-07-16
+Skill Version: v2.19
+Last Updated: 2026-11-25
 
 > **版本行說明(v2.17 起)**:上方 `Skill Version` 行是**全系統總版本號的唯一 owner**。`changelog.md` 只記沿革、不作版本源;其他檔 frontmatter 的 version 欄僅標示該檔自身整合到哪版。進版 SOP:改本行 + changelog 新增條目,check.py VERSION 檢查兩者一致(紅燈擋 commit)。任何 AI 回報 Skill 版本一律以本行為準。
 
@@ -204,16 +204,16 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 <!-- AUTO-FILELIST START -->
 | 檔名 | 版本 | 更新日期 | 狀態 |
 |---|---|---|---|
-| `router.md` | Agent v1.0 | 2026-07-27 | 🟢 active |
+| `router.md` | Agent v1.0 | 2026-11-25 | 🟢 active |
 | `account_health.md` | 1.0 | 2026-05-29 | 🟢 active |
 | `active_constraints.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `changelog.md` | Agent v1.0 + v2.18 | 2026-07-16 | 🟢 active |
+| `changelog.md` | Agent v1.0 + v2.19 | 2026-11-25 | 🟢 active |
 | `data.md` | Agent v1.0 + v2.18 | 2026-07-16 | 🟢 active |
-| `dictionary.md` | Agent v1.0 | 2026-05-29 | 🟢 active |
-| `performance_log.md` | 1.0 | 2026-05-29 | 🟢 active |
-| `principles.md` | Agent v1.0 + v2.16 | 2026-06-30 | 🟢 active |
+| `dictionary.md` | Agent v1.0 + v2.19 | 2026-11-25 | 🟢 active |
+| `performance_log.md` | 1.1 | 2026-11-25 | 🟢 active |
+| `principles.md` | Agent v1.0 + v2.19 | 2026-11-25 | 🟢 active |
 | `voice.md` | Agent v1.0 | 2026-05-29 | 🟡 skeleton |
-| `workflows.md` | Agent v1.0 + v2.18 | 2026-07-27 | 🟢 active |
+| `workflows.md` | Agent v1.0 + v2.19 | 2026-11-25 | 🟢 active |
 <!-- AUTO-FILELIST END -->
 
 ### 📂 動態資料夾
@@ -322,6 +322,7 @@ Claude 收到「要寫某店文案」時，依序跑這 6 步：
 | 五區交付包（無 400-450(DLV-5) 字演算法版）| 2026-05-29 | 漏掉演算法甜蜜點字數 | 六區交付包（新增 IG 演算法版 400-450 字 Caption） |
 | A/B/C/D 案件分級制 | 2026-05-29 | Ivan 不採用分級邏輯，廠商案全接 | 核心原則：演算法優先 + Ivan 指令例外（見 SECTION B 開頭） |
 | 「禁接 D 級案件 4 週」期間限制 | 2026-05-29 | 分級制廢除後此規則無效 | 無，改為「廠商特殊要求紀錄」 |
+| 故事感型「避免太誇張」套到所有鉤子語氣 / 鉤子區也套業配感詞替換(必點→可以點) | 2026-11-25（v2.19 試行） | 把鉤子壓成說明句，Amy 回饋不如 GPT 爆 | 語氣可誇、事實不可造（principles 原則 P-2）；鉤子區業配感詞例外（dictionary 表 6） |
 
 ### 衝突解決原則
 - **新版自動贏舊版**：日期較新的規則永遠優先
